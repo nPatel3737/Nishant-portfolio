@@ -1,3 +1,4 @@
+// sanity/schemaTypes/article.ts
 import { defineField, defineType } from "sanity";
 
 export const articleType = defineType({
@@ -9,6 +10,16 @@ export const articleType = defineType({
       name: "title",
       title: "Title",
       type: "string",
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
+      name: "slug",
+      title: "Slug",
+      type: "slug",
+      options: {
+        source: "title",
+        maxLength: 96,
+      },
       validation: (Rule) => Rule.required(),
     }),
     defineField({
@@ -32,7 +43,14 @@ export const articleType = defineType({
       name: "portfolioValue",
       title: "Portfolio Value",
       type: "string",
-      description: "Example: Flagship article, featured insight, supporting article",
+      description:
+        "Example: Flagship insight, Featured article, Foundation article",
+    }),
+    defineField({
+      name: "externalUrl",
+      title: "External Article URL",
+      type: "url",
+      description: "Paste your LinkedIn article link or another public article URL",
     }),
     defineField({
       name: "featured",

@@ -1,3 +1,4 @@
+// app/components/FeaturedInsight.tsx
 type FeaturedInsightProps = {
   article: {
     title?: string;
@@ -5,6 +6,7 @@ type FeaturedInsightProps = {
     summary?: string;
     keyMessage?: string;
     portfolioValue?: string;
+    externalUrl?: string;
   } | null;
 };
 
@@ -25,12 +27,26 @@ export default function FeaturedInsight({ article }: FeaturedInsightProps) {
             </h2>
 
             <p className="mt-4 text-sm text-white/50">
-              {article.publishedAt} {article.portfolioValue ? `• ${article.portfolioValue}` : ""}
+              {article.publishedAt}
+              {article.portfolioValue ? ` • ${article.portfolioValue}` : ""}
             </p>
 
             <p className="mt-6 max-w-3xl text-base leading-8 text-white/65 md:text-lg">
               {article.summary}
             </p>
+
+            {article.externalUrl ? (
+              <div className="mt-8">
+                <a
+                  href={article.externalUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex rounded-full bg-cyan-400 px-6 py-3 text-sm font-medium text-black transition hover:bg-cyan-300"
+                >
+                  Read full article
+                </a>
+              </div>
+            ) : null}
           </div>
 
           <div className="rounded-[1.5rem] border border-white/10 bg-black/20 p-6">

@@ -1,3 +1,4 @@
+// sanity/lib/queries.ts
 import { groq } from "next-sanity";
 
 export const profileQuery = groq`
@@ -16,6 +17,7 @@ export const profileQuery = groq`
 export const featuredProjectsQuery = groq`
   *[_type == "project"] | order(order asc){
     title,
+    "slug": slug.current,
     subtitle,
     summary,
     context,
@@ -28,10 +30,12 @@ export const featuredProjectsQuery = groq`
 export const articlesQuery = groq`
   *[_type == "article"] | order(order asc){
     title,
+    "slug": slug.current,
     publishedAt,
     summary,
     keyMessage,
     portfolioValue,
+    externalUrl,
     featured,
     order
   }
@@ -72,6 +76,43 @@ export const achievementsQuery = groq`
     description,
     metric,
     type,
+    order
+  }
+`;
+
+export const articleSlugsQuery = groq`
+  *[_type == "article" && defined(slug.current)][]{
+    "slug": slug.current
+  }
+`;
+
+export const projectSlugsQuery = groq`
+  *[_type == "project" && defined(slug.current)][]{
+    "slug": slug.current
+  }
+`;
+
+export const articleBySlugQuery = groq`
+  *[_type == "article" && slug.current == $slug][0]{
+    title,
+    "slug": slug.current,
+    publishedAt,
+    summary,
+    keyMessage,
+    portfolioValue,
+    externalUrl
+  }
+`;
+
+export const projectBySlugQuery = groq`
+  *[_type == "project" && slug.current == $slug][0]{
+    title,
+    "slug": slug.current,
+    subtitle,
+    summary,
+    context,
+    bullets,
+    featured,
     order
   }
 `;

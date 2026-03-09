@@ -1,3 +1,4 @@
+import Link from "next/link";
 import FeaturedInsight from "./components/FeaturedInsight";
 import ContactCTA from "./components/ContactCTA";
 import SimulatorGallery from "./components/SimulatorGallery";
@@ -38,6 +39,7 @@ export default async function HomePage() {
     featuredArticles.length > 0 ? featuredArticles : articles || [];
 
   const flagshipArticle = visibleArticles[0] || null;
+  const remainingArticles = visibleArticles.slice(1);
 
   return (
     <main className="relative min-h-screen bg-neutral-950 pb-24 text-white md:pb-0">
@@ -164,7 +166,10 @@ export default async function HomePage() {
           <div className="grid gap-6 lg:grid-cols-2">
             {visibleProjects.map((project: any, index: number) => (
               <Reveal key={index} delay={index * 0.08}>
-                <div className="rounded-3xl border border-white/10 bg-white/[0.04] p-7 shadow-2xl shadow-black/20">
+                <Link
+                  href={project.slug ? `/projects/${project.slug}` : "#"}
+                  className="block rounded-3xl border border-white/10 bg-white/[0.04] p-7 shadow-2xl shadow-black/20 transition hover:border-cyan-400/40 hover:bg-white/[0.06]"
+                >
                   <p className="mb-3 text-sm text-cyan-400">{project.context}</p>
                   <h3 className="text-2xl font-semibold">{project.title}</h3>
                   <p className="mt-2 text-white/75">{project.subtitle}</p>
@@ -182,7 +187,11 @@ export default async function HomePage() {
                       )
                     )}
                   </ul>
-                </div>
+
+                  <p className="mt-6 text-sm font-medium text-cyan-300">
+                    View project →
+                  </p>
+                </Link>
               </Reveal>
             ))}
           </div>
@@ -201,9 +210,12 @@ export default async function HomePage() {
           </Reveal>
 
           <div className="grid gap-6 lg:grid-cols-2">
-            {visibleArticles.map((article: any, index: number) => (
+            {remainingArticles.map((article: any, index: number) => (
               <Reveal key={index} delay={index * 0.08}>
-                <div className="rounded-3xl border border-white/10 bg-white/[0.04] p-7">
+                <Link
+                  href={article.slug ? `/articles/${article.slug}` : "#"}
+                  className="block rounded-3xl border border-white/10 bg-white/[0.04] p-7 transition hover:border-cyan-400/40 hover:bg-white/[0.06]"
+                >
                   <p className="mb-3 text-sm text-cyan-400">
                     {article.publishedAt}
                   </p>
@@ -217,7 +229,11 @@ export default async function HomePage() {
                       {article.keyMessage}
                     </p>
                   </div>
-                </div>
+
+                  <p className="mt-6 text-sm font-medium text-cyan-300">
+                    Read article →
+                  </p>
+                </Link>
               </Reveal>
             ))}
           </div>
