@@ -1,26 +1,50 @@
 import type { Metadata } from "next";
+import { DM_Sans } from "next/font/google";
 import "./globals.css";
+
+const dmSans = DM_Sans({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-dm-sans",
+});
 
 export const metadata: Metadata = {
   title: "Nishant Patel | Human Factors & Aviation Safety Portfolio",
   description:
-    "Portfolio of Nishant Patel, focused on human factors, aviation safety, human-automation interaction, future aviation systems, and safety-led engineering thinking.",
+    "Aerospace engineer specialising in human factors, aviation safety, risk assessment, and future aviation systems. MSc from Cranfield University.",
+  keywords: [
+    "human factors",
+    "aviation safety",
+    "safety engineering",
+    "MCAS",
+    "single pilot operations",
+    "Cranfield University",
+    "Nishant Patel",
+  ],
   openGraph: {
-    title: "Nishant Patel | Human Factors & Aviation Safety Portfolio",
+    title: "Nishant Patel | Human Factors & Aviation Safety",
     description:
-      "Projects, articles, and research across aviation safety, human factors, AI, BVLOS, and future-flight systems.",
+      "Aerospace engineer specialising in human factors, aviation safety, and future aviation systems.",
     type: "website",
   },
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="en">
-      <body>{children}</body>
+    <html lang="en" className="scroll-smooth">
+      <head>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap"
+          rel="stylesheet"
+        />
+      </head>
+      <body className={`${dmSans.variable} font-sans bg-[#0a0e17] text-[#e2e4e9] antialiased`}>
+        {children}
+      </body>
     </html>
   );
 }
