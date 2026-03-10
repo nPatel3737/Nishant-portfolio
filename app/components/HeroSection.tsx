@@ -52,19 +52,29 @@ export default function HeroSection() {
           </Reveal>
 
           <Reveal delay={0.25}>
-            <div className="flex gap-3 mt-8 flex-wrap">
-              <a href="#projects" className="cta-primary">
-                View Research &amp; Projects ↓
-              </a>
-              <a
-                href="https://www.linkedin.com/in/nishantpatel37/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="cta-secondary"
-              >
-                LinkedIn Profile →
-              </a>
-            </div>
+            <div className="mt-8 flex flex-wrap gap-3">
+  <a href="#projects" className="cta-primary">
+    View Research &amp; Projects ↓
+  </a>
+
+  <a
+    href="/Nishant-Patel-CV.pdf"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="cta-secondary"
+  >
+    Download CV ↓
+  </a>
+
+  <a
+    href="https://www.linkedin.com/in/nishantpatel37/"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="cta-secondary"
+  >
+    LinkedIn Profile →
+  </a>
+</div>
           </Reveal>
         </div>
 

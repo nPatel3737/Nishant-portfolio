@@ -18,22 +18,32 @@ export default function ContactSection() {
       </Reveal>
 
       <Reveal delay={0.1}>
-        <div className="flex gap-4 mt-8 flex-wrap">
-          <a
-            href="mailto:npatel6644@gmail.com"
-            className="cta-primary text-[15px]"
-          >
-            ✉ npatel6644@gmail.com
-          </a>
-          <a
-            href="https://www.linkedin.com/in/nishantpatel37/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="cta-secondary text-[15px]"
-          >
-            Connect on LinkedIn →
-          </a>
-        </div>
+        <div className="mt-8 flex flex-wrap gap-4">
+  <a
+    href="mailto:npatel6644@gmail.com"
+    className="cta-primary text-[15px]"
+  >
+    ✉ npatel6644@gmail.com
+  </a>
+
+  <a
+    href="/Nishant-Patel-CV.pdf"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="cta-secondary text-[15px]"
+  >
+    Download CV ↓
+  </a>
+
+  <a
+    href="https://www.linkedin.com/in/nishantpatel37/"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="cta-secondary text-[15px]"
+  >
+    Connect on LinkedIn →
+  </a>
+</div>
       </Reveal>
 
       <Reveal delay={0.15}>
