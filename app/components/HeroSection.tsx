@@ -4,20 +4,6 @@ import StatNumber from "./StatNumber";
 export default function HeroSection() {
   return (
     <section id="about" className="pt-[120px] pb-20">
-      {/* Availability banner */}
-      <Reveal>
-        <div className="availability-banner">
-          <span className="pulse-dot" />
-          <span className="text-[13.5px] text-slate-400">
-            Seeking roles in{" "}
-            <strong className="text-[#e2e4e9]">
-              aviation safety, human factors engineering, or safety/risk analysis
-            </strong>
-            , available immediately, UK based
-          </span>
-        </div>
-      </Reveal>
-
       {/* Hero grid */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         {/* Left column */}
