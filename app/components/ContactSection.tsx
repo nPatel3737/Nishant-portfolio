@@ -6,14 +6,11 @@ export default function ContactSection() {
       <Reveal>
         <p className="section-label">Let&apos;s Connect</p>
         <h2 className="section-title max-w-[600px]">
-          Open to roles in human factors, aviation safety, and safety
-          engineering
+          Let&apos;s talk human factors and aviation safety
         </h2>
         <p className="body-text mt-4 max-w-[580px]">
-          I&apos;m looking for opportunities where I can apply human factors
-          thinking and safety analysis to real world aviation challenges,
-          whether in design, operations, compliance, or emerging systems. If
-          you&apos;re hiring or want to talk, I&apos;d welcome the conversation.
+          Whether you want to discuss human factors, aviation safety, or a
+          potential collaboration, I&apos;d welcome the conversation.
         </p>
       </Reveal>
 
@@ -54,10 +51,6 @@ export default function ContactSection() {
           </div>
           <div className="text-[13px] text-[#6b7280]">
             <span className="text-[#9ca3b4]">Phone:</span> +44 7733 717919
-          </div>
-          <div className="text-[13px] text-[#6b7280]">
-            <span className="text-[#9ca3b4]">Status:</span> Available
-            immediately
           </div>
         </div>
       </Reveal>
